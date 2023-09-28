@@ -1,16 +1,16 @@
 const socketClient = io();
 let products = [];
+// TRAEMOS EL FORMULARIO COMPLETO CON LOS PRODUCTOS QUE SE VAN A IR ACTUALIZANDO
 const productsList = document.getElementById("productsList");
-
 socketClient.emit("getAllProducts");
-
+// AGARRAMOS LOS FORMULARIOS
 const addProductForm = document.getElementById("addProductForm");
 const updateProductForm = document.getElementById("updateProductForm");
 const deleteForm = document.getElementById("deleteForm");
-
 let updateProductId = document.getElementById("updateProductId");
 let deleteProductId = document.getElementById("deleteProductId");
 
+// VALIDACION PREVIA DE QUE SE ENVIE TODO LO NECESARIO
 function validNewProduct(product) {
   return (
     product.name &&
@@ -20,6 +20,7 @@ function validNewProduct(product) {
   );
 }
 
+// CAPTAMOS LOS VALORES DESDE LOS FORMULARIOS VALIDAMOS Y AGREGAMOS
 addProductForm.onsubmit = async (e) => {
   e.preventDefault();
   let newProduct = {
@@ -34,6 +35,7 @@ addProductForm.onsubmit = async (e) => {
   }
 };
 
+// AGARRAMOS EL VALOR A UPDATEAR Y LO ENVIAMOS
 updateProductForm.onsubmit = async (e) => {
   e.preventDefault();
   let updateProductPrice = {
