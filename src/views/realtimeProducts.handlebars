@@ -1,0 +1,30 @@
+<h1>Lista de productos</h1>
+<h3>{{error}}</h3>
+<div class="main">
+  <ul id="productsList">
+  </ul>
+  <div class="forms">
+    <form id="addProductForm">
+      <p>Add product</p>
+      <input type="text" name="newProductName"id="newProductName" placeholder="Nombre del producto"/>
+      <input type="text" name="newProductDescription" id="newProductDescription" placeholder="Descripcion"/>
+      <input type="number" name="newProductPrice" id="newProductPrice" placeholder="Precio"/>
+      <input type="number" name="newProductStock" id="newProductStock" placeholder="Stock"/>
+      <input type="submit" value="SEND" />
+    </form>
+    <form id="updateProductForm">
+      <p>Update price</p>
+      <input type="number" name="updateProductId" id="updateProductId" placeholder="ID del producto"/>
+      <input type="number" name="updateProductPrice" id="updateProductPrice" placeholder="precio"/>
+      <input type="submit" value="SEND" />
+    </form>
+    <form id="deleteForm">
+      <p>Delete product</p>
+      <input type="number" name="deleteProductId" id="deleteProductId" placeholder="ID del producto"/>
+      <input type="submit" value="SEND" />
+    </form>
+  </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/realtimeProducts.js"></script>

@@ -6,7 +6,7 @@ class ProductManager{
     }
 
     // obtener los productos del archivo si es que existen 
-    async getProducts(queryObj){
+    async getProducts(queryObj={}){
 
         const {limit} = queryObj        
         try {
